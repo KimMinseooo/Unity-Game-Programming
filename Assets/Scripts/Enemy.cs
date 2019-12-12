@@ -1,42 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-
-    public float speed = 10f;
+    // 유닛 초기 속도
+    public float startSpeed = 10f;
+    public float speed;
+    // 유닛 초기 체력
+    public float startHealth = 100;
+    private float Health;
+    // 유닛 가격
     public int coin = 100;
 
-    private Transform target;
-    private int wavepointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        target = Waypoints.points[0];        
+        // 초기값 설정.
+        speed = startSpeed;
+        Health = startHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+    // 유닛 데미지 함수
+    public void TakeDamage() {
+        PlayerStats.money += coin;
+        Destroy(gameObject);
 
-        if(Vector3.Distance(transform.position, target.position) <= 0.2f) {
-            GetNextWayPoint();
-        }
-    }
-
-    void GetNextWayPoint() {
-        
-        if(wavepointIndex >= Waypoints.points.Length - 1) {
-            PlayerStats.money += coin;
-            Destroy(gameObject);
-            return;
-        }
-
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
     }
 }
