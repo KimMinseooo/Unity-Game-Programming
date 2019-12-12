@@ -16,9 +16,10 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         if(target == null) {
-            Destroy(target);
+            // 발사체가 대상을 잃으면 삭제.
+            Destroy(gameObject);
             return ;
-        } 
+        }
 
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
@@ -59,8 +60,8 @@ public class Bullet : MonoBehaviour
 
     // Target Damage 계산
     void Damage(Transform enemy) {
-        Destroy(enemy.gameObject);
-
+        Enemy e = enemy.GetComponent<Enemy>();
+        e.TakeDamage();
     }
 
     void OnDrawGizmosSelected() {
