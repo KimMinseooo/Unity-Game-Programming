@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     // 유닛 데미지 함수
     public void TakeDamage() {
         PlayerStats.money += coin;
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
-
     }
 }
