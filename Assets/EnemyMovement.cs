@@ -38,10 +38,17 @@ public class EnemyMovement : MonoBehaviour
     void GetNextWayPoint() {
         
         if(wavepointIndex >= Waypoints.points.Length - 1) {
+            EndPath();
             return;
         }
 
         wavepointIndex++;
         target = Waypoints.points[wavepointIndex];
+    }
+
+    void EndPath() {
+        PlayerStats.Life--;
+        WaveSpawner.EnemiesAlive--;
+        Destroy(gameObject);
     }
 }
