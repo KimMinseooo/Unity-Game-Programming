@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
         isDead =true;
 
         PlayerStats.money += coin;
+        WaveSpawner.EnemiesAlive--;
 
         Destroy(gameObject);
     }
