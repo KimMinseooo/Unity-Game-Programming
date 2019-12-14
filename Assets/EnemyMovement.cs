@@ -38,7 +38,8 @@ public class EnemyMovement : MonoBehaviour
     void GetNextWayPoint() {
         
         if(wavepointIndex >= Waypoints.points.Length - 1) {
-            EndPath();
+            wavepointIndex= 0;
+            target =Waypoints.points[0];
             return;
         }
 
