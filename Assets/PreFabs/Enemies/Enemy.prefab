@@ -142,6 +142,7 @@ MonoBehaviour:
   startHealth: 100
   healthBar: {fileID: 8087773801671649778}
   coin: 100
+  coinText: {fileID: 822424990065134142, guid: 53440c51bbc959a40b1db48a4f30849d, type: 3}
   DamageText: {fileID: 4232625839314878813, guid: 7df91af24d127614b87d546df458a1e1,
     type: 3}
   TextPos: {fileID: 1156560022751989623}

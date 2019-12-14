@@ -15,9 +15,11 @@ public class Enemy : MonoBehaviour
     // 유닛 가격
     public int coin = 100;
 
+    public GameObject coinText;
     public GameObject DamageText;
     public GameObject TextPos;
 
+    public GameObject coinTextPos;
 
 
     
@@ -31,6 +33,7 @@ public class Enemy : MonoBehaviour
 
     // 유닛 데미지 함수
     public void TakeDamage(float amount) {
+        
         
         GameObject dmgText =Instantiate(DamageText, TextPos.transform.position, Quaternion.Euler(40,0,0));
         dmgText.GetComponent<Text>().text = amount.ToString();
@@ -48,6 +51,11 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        //적기 사망시 coin 획득 텍스트 추가
+        TextPos.transform.position=new Vector3(TextPos.transform.position.x,TextPos.transform.position.y+1,TextPos.transform.position.z);
+        GameObject getcoinText =Instantiate(coinText, TextPos.transform.position,Quaternion.Euler(40,0,0));
+        getcoinText.GetComponent<Text>().text = "$" +coin.ToString();
+        Destroy(getcoinText, 1f); //1초 후 코인 획득 텍스트 삭제 
         isDead =true;
 
         PlayerStats.money += coin;
