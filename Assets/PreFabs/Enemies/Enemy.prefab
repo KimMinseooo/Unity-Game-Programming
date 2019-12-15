@@ -142,6 +142,7 @@ MonoBehaviour:
   startHealth: 100
   healthBar: {fileID: 8087773801671649778}
   coin: 50
+  enemyScore: 3
   coinText: {fileID: 822424990065134142, guid: 53440c51bbc959a40b1db48a4f30849d, type: 3}
   DamageText: {fileID: 4232625839314878813, guid: 7df91af24d127614b87d546df458a1e1,
     type: 3}
@@ -222,6 +223,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 3
   m_PreserveAspect: 0
@@ -394,6 +397,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 3
   m_PreserveAspect: 0

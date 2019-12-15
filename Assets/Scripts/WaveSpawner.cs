@@ -24,6 +24,10 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
 
+    void Start() {
+        EnemiesAlive = 0;
+    }
+
     void Update() {
         // 시간을 계속해서 빼줌.
         countdown -= Time.deltaTime;
@@ -51,8 +55,6 @@ public class WaveSpawner : MonoBehaviour
 
     
     IEnumerator SpawnWave() {
-        PlayerStats.Rounds++;
-
         Wave wave = waves[0];
 
         for(int i = 0; i < wave.GetCount(); i++) {
