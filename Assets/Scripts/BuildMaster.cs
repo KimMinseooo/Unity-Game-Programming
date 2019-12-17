@@ -16,6 +16,9 @@ public class BuildMaster : MonoBehaviour
     public GameObject missileTurretPrefab;
 
     private TurretBluePrint turretToBuild;
+    private Node selectedNode;
+
+    public NodeUI nodeUI;
 
     // 선택한 터렛의 종류가 들어있는지 검사
     public bool CanBuild {
@@ -43,8 +46,31 @@ public class BuildMaster : MonoBehaviour
 
         Debug.Log("Turret Build Money left: " + PlayerStats.money);
     }
-    
+
+    public void SelectNode ( Node node) {
+        if(selectedNode == node) {
+            DeselectNode();
+            return ;
+        }
+        selectedNode = node;
+        turretToBuild = null;
+
+        nodeUI.SetTarget(node);
+    }
+
+    public void DeselectNode() {
+        selectedNode = null;
+        nodeUI.Hide();
+    }
+
     public void SelectTurretToBuild(TurretBluePrint turret) {
         turretToBuild = turret;
+        selectedNode = null;
+
+        nodeUI.Hide();
+    }
+
+    public TurretBluePrint GetBluePrint() {
+        return turretToBuild;
     }
 }

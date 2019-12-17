@@ -13,7 +13,9 @@ public class Enemy : MonoBehaviour
 
     private bool isDead =false;
     // 유닛 가격
-    public int coin = 100;
+    public int coin;
+    // 유닛 점수
+    public int enemyScore;
 
     public GameObject coinText;
     public GameObject DamageText;
@@ -58,7 +60,10 @@ public class Enemy : MonoBehaviour
         Destroy(getcoinText, 1f); //1초 후 코인 획득 텍스트 삭제 
         isDead =true;
 
+        // 적기 사망시 스코어 점수 적기에 따라 증가, 적기의 코인 획득.
+        PlayerStats.Score += enemyScore;
         PlayerStats.money += coin;
+
         WaveSpawner.EnemiesAlive--;
 
         Destroy(gameObject);
