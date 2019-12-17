@@ -646,10 +646,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 10
   speed: 5
-  startHealth: 100
+  startHealth: 200
   healthBar: {fileID: 215637658379270910}
-  coin: 1
-  enemyScore: 1
+  coin: 50
+  enemyScore: 10
   coinText: {fileID: 822424990065134142, guid: 53440c51bbc959a40b1db48a4f30849d, type: 3}
   DamageText: {fileID: 4232625839314878813, guid: 7df91af24d127614b87d546df458a1e1,
     type: 3}
