@@ -13,9 +13,9 @@ public class WaveSpawner : MonoBehaviour
 
     public Transform spawnPoint;
 
-    private float timeBetweenWaves = 10f;
-    private float waveTime = 30f;
-    private float countdown = 5f;
+    private float timeBetweenWaves = 15f;
+    private float waveTime = 60f;
+    private float countdown = 10f;
     private bool isWaveTime = true;
     
     private PlayerStats playerMoney;
@@ -33,27 +33,21 @@ public class WaveSpawner : MonoBehaviour
         countdown -= Time.deltaTime;
         waveCountdownText.text = Mathf.Round(countdown).ToString();
 
-        if(EnemiesAlive > 0 ) {
-            return ;
-        }
-
         // countdown 이 0과 같거나 작을 때
         // 시간의 경과에 따른 실행
         if(countdown <= 0f && isWaveTime) {
             StartCoroutine(SpawnWave());
-            // ReSpawn 시간이 지금은 5초로 지정됨.
             countdown = waveTime;
             isWaveTime = false;
             return ;
         } else if(countdown <= 0f && !isWaveTime) {
+            WaveEnd();
             countdown = timeBetweenWaves;
             isWaveTime = true;
             return ;
         }
     }
 
-
-    
     IEnumerator SpawnWave() {
         Wave wave = waves[0];
 
@@ -69,5 +63,16 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(GameObject enemy) {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
         EnemiesAlive++;
+    }
+
+    void WaveEnd() {
+        if(PlayerStats.Life <= 0) {
+            GameMaster.gameIsOVer = true;
+        }
+
+        if(EnemiesAlive > 0 ) {
+            PlayerStats.Life -= EnemiesAlive;
+        }
+
     }
 }

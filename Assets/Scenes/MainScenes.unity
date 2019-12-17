@@ -3065,7 +3065,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 275157947}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1144199792}
+        m_MethodName: Retry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &275157947
@@ -7832,7 +7843,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 616588759}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1144199792}
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &616588759
@@ -13610,7 +13632,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MAIN
+  m_Text: MAIN MENU
 --- !u!222 &1282161843
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18599,6 +18621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 5277318453832661172, guid: 32d4dfdd026a6c747886f7fd01f4b1e8, type: 3}
+    count: 40
     rate: 2
   spawnPoint: {fileID: 248479592}
   waveCountdownText: {fileID: 1036280124}
@@ -18672,6 +18695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7a5961fc223eb4ea602354a1254714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainMenuScene: MainMenuScene
   ui: {fileID: 330882726}
 --- !u!4 &1875370437 stripped
 Transform:

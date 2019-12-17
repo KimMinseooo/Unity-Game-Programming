@@ -4,7 +4,7 @@
 public class Wave
 {
     public GameObject enemy;
-    private int count = 20;
+    public int count;
     public float rate;
 
     public int GetCount () {

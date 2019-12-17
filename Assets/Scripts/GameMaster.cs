@@ -26,6 +26,7 @@ public class GameMaster : MonoBehaviour
     }
 
     void EndGame() {
+        Time.timeScale = 0f;
         gameIsOVer = true;
         gameOverUI.SetActive(true);
     }
