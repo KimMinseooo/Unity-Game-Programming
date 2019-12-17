@@ -33,6 +33,8 @@ public class EnemyMovement : MonoBehaviour
         }
         
         enemy.speed = enemy.startSpeed;
+        transform.LookAt(target);
+
     }
 
     void GetNextWayPoint() {

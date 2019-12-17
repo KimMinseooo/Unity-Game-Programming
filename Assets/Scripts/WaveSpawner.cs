@@ -15,7 +15,7 @@ public class WaveSpawner : MonoBehaviour
 
     private float timeBetweenWaves = 15f;
     private float waveTime = 60f;
-    private float countdown = 10f;
+    private float countdown = 2f;
     private bool isWaveTime = true;
     
     private PlayerStats playerMoney;
